@@ -40,12 +40,38 @@ go get github.com/joaosoft/notifier
 This examples are available in the project at [notifier/examples](https://github.com/joaosoft/notifier/tree/master/examples)
 
 ```go
+func main() {
+	myNotifier, err := notifier.New()
+	if err != nil {
+		panic(err)
+	}
 
+	// notifiers
+	slack := myNotifier.NewSlackNotifier()
+
+	// send message with slack notifier
+	sendMessage(slack, "hello slack")
+}
+
+func sendMessage(notifier notifier.INotifier, message string) {
+	fmt.Printf("\nSending message to %s...\n\n", notifier.Name())
+
+	if err := notifier.Notify(message); err != nil {
+		panic(err)
+	}
+
+	fmt.Printf("\nMessage send to %s!", notifier.Name())
+}
 ```
 
 > ##### Result:
 ```
+Sending message to slack...
 
+[IN] Method[POST] Url[/services/T9NSHKVA7/BH8H6K15W/UnVtECaobipqK8MmkvC0mJav] on Start[2019-03-26 21:51:21.943464 +0000 WET m=+0.005795099]
+[OUT] Status[200] Method[POST] Url[/services/T9NSHKVA7/BH8H6K15W/UnVtECaobipqK8MmkvC0mJav] on Start[2019-03-26 21:51:21.943464 +0000 WET m=+0.005795099] Elapsed[565.239383ms]
+
+Message send to slack!
 ```
 
 ## Known issues

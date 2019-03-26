@@ -19,7 +19,7 @@ func main() {
 }
 
 func sendMessage(notifier notifier.INotifier, message string) {
-	fmt.Printf("\nSending message to %s...\n", notifier.Name())
+	fmt.Printf("\nSending message to %s...\n\n", notifier.Name())
 
 	if err := notifier.Notify(message); err != nil {
 		panic(err)
