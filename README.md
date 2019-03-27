@@ -30,7 +30,7 @@ go get github.com/joaosoft/notifier
       "level": "info"
     },
     "slack": {
-      "webhook": "https://hooks.slack.com/services/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"
+      "webhook": "https://hooks.slack.com/services/XXXXXXXXX/XXXXXXXXX/XXXXXXXXXXXXXXXXXXXXXXXXXXX"
     }
   }
 }
