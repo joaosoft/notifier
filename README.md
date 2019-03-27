@@ -60,7 +60,7 @@ func sendMessage(notifier notifier.INotifier, message string) {
 		panic(err)
 	}
 
-	fmt.Printf("\nMessage send to %s!", notifier.Name())
+	fmt.Printf("\nMessage sent to %s!", notifier.Name())
 }
 ```
 
