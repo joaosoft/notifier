@@ -69,7 +69,7 @@ func sendMessage(notifier notifier.INotifier, message string) {
 Sending message to slack...
 
 [IN] Method[POST] Url[/services/XXXXXXXXX/XXXXXXXXX/XXXXXXXXXXXXXXXXXXXXXXXXXXX] on Start[2019-03-26 21:51:21.943464 +0000 WET m=+0.005795099]
-[OUT] Status[200] Method[POST] Url[/services/T9NSHKVA7/BH8H6K15W/UnVtECaobipqK8MmkvC0mJav] on Start[2019-03-26 21:51:21.943464 +0000 WET m=+0.005795099] Elapsed[565.239383ms]
+[OUT] Status[200] Method[POST] Url[/services/XXXXXXXXX/XXXXXXXXX/XXXXXXXXXXXXXXXXXXXXXXXXXXX] on Start[2019-03-26 21:51:21.943464 +0000 WET m=+0.005795099] Elapsed[565.239383ms]
 
 Message send to slack!
 ```
