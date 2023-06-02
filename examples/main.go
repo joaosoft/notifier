@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"notifier"
+	"github.com/joaosoft/notifier"
 )
 
 func main() {
