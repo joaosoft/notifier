@@ -31,7 +31,7 @@ func readFile(file string, obj interface{}) ([]byte, error) {
 	var err error
 
 	if !exists(file) {
-		return nil, errors.New(errors.ErrorLevel, 0, "file don't exist")
+		return nil, errors.New(errors.LevelError, 0, "file don't exist")
 	}
 
 	f, err := os.Open(file)
@@ -57,7 +57,7 @@ func readFileLines(file string) ([]string, error) {
 	lines := make([]string, 0)
 
 	if !exists(file) {
-		return nil, errors.New(errors.ErrorLevel, 0, "file don't exist")
+		return nil, errors.New(errors.LevelError, 0, "file don't exist")
 	}
 
 	f, err := os.Open(file)
@@ -80,7 +80,7 @@ func readFileLines(file string) ([]string, error) {
 
 func writeFile(file string, obj interface{}) error {
 	if !exists(file) {
-		return errors.New(errors.ErrorLevel, 0, "file don't exist")
+		return errors.New(errors.LevelError, 0, "file don't exist")
 	}
 
 	jsonBytes, _ := json.MarshalIndent(obj, "", "    ")

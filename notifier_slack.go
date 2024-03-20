@@ -33,7 +33,7 @@ func (n *notifierSlack) Name() string {
 }
 
 func (n *notifierSlack) Notify(message string) error {
-	request, err := n.service.webClient.NewRequest(web.MethodPost, n.config.Webhook)
+	request, err := n.service.webClient.NewRequest(web.MethodPost, n.config.Webhook, web.ContentTypeApplicationJSON, nil)
 	if err != nil {
 		return ErrorNotifierSendMessage.Format(n.name, err)
 	}
@@ -46,7 +46,7 @@ func (n *notifierSlack) Notify(message string) error {
 		return ErrorMarshalMessage.Format(n.name, message)
 	}
 
-	response, err := request.WithBody(body, web.ContentTypeApplicationJSON).Send()
+	response, err := request.WithBody(body).Send()
 	if err != nil {
 		return ErrorNotifierSendMessage.Format(n.name, err)
 	}
